@@ -1,11 +1,42 @@
 #include <iostream>
 #include <string>
+#include <vector>
+
+using namespace std;
 
 // 1 -  Faça uma função que recebe uma certa medida e ajusta ela percentualmente 
 // entre dois valores mínimo e máximo e retorna esse valor
 
+/* 100% = max valor - 0% = min valor  x% = qual valor?
+*/
+
+float PercentualRelativ(int min, int max, int medida){
+	float min = min;
+	float max = max;
+	float medida = medida;
+	float perc;
+
+	//formula para achar a percentagem	
+	perc = (medida - min)/(max - min);
+
+	cout << "Percetagem final:" << perc;
+
+	return perc;
+
+
+}
+
 // 2 - Faça uma função que simule a leitura de um sensor lendo o 
 // valor do teclado ao final a função retorna este valor
+
+float SensorRead(){
+	float num;
+
+	cin >> num;
+
+	return num;
+}
+
 
 // 3 - Faça uma função que armazena uma medida inteira qualquer 
 // em um vetor fornecido. Note que como C não possui vetores 
@@ -16,17 +47,42 @@
 
 
 
+
+
 // 4 - Faça uma função que recebe um vetor com 4 posições que contém 
 // o valor da distância de um pequeno robô até cada um dos seus 4 lados.
 // A função deve retornar duas informações: A primeira é a direção 
 // de maior distância ("Direita", "Esquerda", "Frente", "Tras") e a 
 // segunda é esta maior distância.
 
+float PosRobot (float dir, float esq, float fren, float atras){
+	float dir = dir;
+	float esq = esq;
+	float fren = fren;
+	float atras = atras;
 
+	vector<float>directions;
+
+	directions[dir, esq, fren, atras];
+
+	
+}
 
 
 // 5 - Faça uma função que pergunta ao usuário se ele deseja continuar o mapeamento e 
 // retorna verdadeiro ou falso
+bool Continuar(){
+	bool resposta;
+	cout << "Deseja continuar? S - SIM / N - NÃO";
+	cin >> resposta;
+	if (resposta = "S"){
+		return 1;
+	} else if (resposta = "N") {
+		return 0;
+	} else {
+		return printf("RESPOSTA ERRADA");
+	}
+}
 
 
 // 6 - A função abaixo (que está incompleta) vai "dirigindo" virtualmente um robô 
@@ -50,13 +106,13 @@ int dirige(int *v,int maxv){
 	int dirigindo = 1;		
 	while(dirigindo){		
 		int medida = /// .. Chame a função de de leitura da medida para a "Direita"
-		medida = converteSensor(medida,0,830);
+//		medida = converteSensor(medida,0,830);
 		posAtualVetor = // Chame a função para armazenar a medida no vetor
         ///////////////////////////////////////////////////////////////////////////		
 		// Repita as chamadas acima para a "Esquerda", "Frente", "Tras"
 		// ................
 		///////////////////////////////////////////////////////////////////////////
-		dirigindo = leComando();		
+//		dirigindo = leComando();		
 	}
 	return posAtualVetor;
 }
@@ -70,14 +126,14 @@ void percorre(int *v,int tamPercorrido){
 	int maiorDir = 0;
 	
 	for(int i = 0; i< tamPercorrido; i+=4){
-		char *direcao = direcaoMenorCaminho(&(vetorMov[i]),&maiorDir);
+//		char *direcao = direcaoMenorCaminho(&(vetorMov[i]),&maiorDir);
 		printf("Movimentando para %s distancia = %i\n",direcao,maiorDir);
 	}
 }
 
 int main(int argc, char** argv) {
 	int maxVetor = 100;
-	int vetorMov[maxVetor*4];
+//	int vetorMov[maxVetor*4];
 	int posAtualVet = 0;
 	
 	posAtualVet = dirige(vetorMov,maxVetor);
